@@ -1,0 +1,58 @@
+h1::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0%;
+    width: 0%;
+    background:linear-gradient(45deg,rgb(22, 122, 91),blue);
+    height: 3px;
+    transition: width 0.3s ease;
+}
+h1::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    background:linear-gradient(45deg,blue,pink);
+    height: 3px;
+    transition: width 0.3s ease;
+}
+h1{
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    font-size: 100px;
+    -webkit-background-clip:text;
+    background-clip: text;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1:hover{
+    animation-name: gradient;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    color: transparent;
+    background: linear-gradient(45deg, rgb(55, 181, 223),rgb(133, 155, 8));
+    background-size:1000%;
+}
+
+@keyframes gradient{
+    from{
+        background-size:1000%;
+    }
+    to{
+        background-size: 100%;
+    }
+}
+
+h1:hover::after{
+    width: 100%;
+}
+
+h1:hover::before{
+    width: 100%;
+}
+
+
